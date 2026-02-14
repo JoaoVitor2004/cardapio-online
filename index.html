@@ -5,40 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio online</title>
+    <link rel="stylesheet" href="./src/styles/styles.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./src/styles/output.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Cardápio online - A melhor hamburgueria da região de são paulo">
-        <meta property="og:description" content="Essa é a hamburgueria ideal para matar a sua fome">
-        <meta property="og:image" content="https://cardapio-online-alpha-ten.vercel.app/src/assets/images/hamb-1.png">
-        <meta property="og:site_name" content="Cardapio online">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-        <script src="./src/js/script.js" defer></script>
-    <style>
-        body {
-            font-family: "Roboto", sans-serif;
-        }
-
-        .background-image {
-            background-image: url("./src/assets/images/bg.png");
-        }
-    </style>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cardápio online - A melhor hamburgueria da região de são paulo">
+    <meta property="og:description" content="Essa é a hamburgueria ideal para matar a sua fome">
+    <meta property="og:image" content="https://cardapio-online-alpha-ten.vercel.app/src/assets/images/hamb-1.png">
+    <meta property="og:site_name" content="Cardapio online">
 </head>
 
 <body>
-    <header class="w-full h-[420px] bg-zinc-900 background-image bg-cover bg-center">
+    <header class="w-full h-[420px] relative">
+        <img src="./src/assets/images/bg.png" class="absolute top-0 left-0 -z-10 w-full h-full bg-cover bg-center" alt="background home">
         <div class="w-full h-full flex flex-col gap-2 justify-center items-center">
             <img src="./src/assets/images/hamb-1.png" alt="logo cardápio online"
                 class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200" />
@@ -64,7 +58,7 @@
                         eum ad temporibus earum nobis.</p>
                     <div class="flex items-center justify-between mt-2">
                         <p>R$ 18.90</p>
-                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn" data-name="hamburguer Smash"
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn cursor-pointer" data-name="hamburguer Smash"
                             data-price="18.90">
                             <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
                         </button>
@@ -81,7 +75,7 @@
                         eum ad temporibus earum nobis.</p>
                     <div class="flex items-center justify-between mt-2">
                         <p>R$ 32.90</p>
-                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn" data-name="hamburguer Duplo"
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn cursor-pointer" data-name="hamburguer Duplo"
                             data-price="32.90">
                             <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
                         </button>
@@ -98,7 +92,7 @@
                         eum ad temporibus earum nobis.</p>
                     <div class="flex items-center justify-between mt-2">
                         <p>R$ 35.90</p>
-                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn" data-name="hamburguer Salad"
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn cursor-pointer" data-name="hamburguer Salad"
                             data-price="35.90">
                             <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
                         </button>
@@ -115,7 +109,7 @@
                         eum ad temporibus earum nobis.</p>
                     <div class="flex items-center justify-between mt-2">
                         <p>R$ 32.90</p>
-                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn" data-name="hamburguer da Casa"
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn cursor-pointer" data-name="hamburguer da Casa"
                             data-price="30">
                             <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
                         </button>
@@ -138,7 +132,7 @@
                     <p class="font-bold">Coca lata</p>
                     <div class="flex items-center justify-between mt-2">
                         <p>R$ 6</p>
-                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn" data-name="Coca lata"
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn cursor-pointer" data-name="Coca lata"
                             data-price="6">
                             <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
                         </button>
@@ -153,7 +147,7 @@
                     <p class="font-bold">Guarana lata</p>
                     <div class="flex items-center justify-between mt-2">
                         <p>R$ 6</p>
-                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn" data-name="Guarana lata"
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn cursor-pointer" data-name="Guarana lata"
                             data-price="6">
                             <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
                         </button>
@@ -179,20 +173,22 @@
             <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
 
             <div class="w-full flex items-center justify-between mt-4">
-                <button id="close-modal-btn">Fechar</button>
-                <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1">Finalizar pedido</button>
+                <button id="close-modal-btn" class="cursor-pointer">Fechar</button>
+                <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 cursor-pointer">Finalizar pedido</button>
             </div>
         </div>
 
     </div>
 
     <footer class="w-full flex justify-center bg-red-500 py-3 fixed bottom-0 z-40">
-        <button id="cart-btn" class="w-full flex items-center gap-3 justify-center text-white font-bold">
+        <button id="cart-btn" class="w-full flex items-center gap-3 justify-center cursor-pointer text-white font-bold">
             (<span id="cart-counter">0</span>)
             Veja meu carrinho
             <i class="fa-solid fa-cart-shopping"></i>
         </button>
     </footer>
+
+    <script src="./src/js/script.js" defer></script>
 </body>
 
 </html>

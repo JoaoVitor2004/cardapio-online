@@ -8,6 +8,7 @@ const cartCounter = document.getElementById('cart-counter')
 const cartModal = document.getElementById('cart-modal')
 const adressInput = document.getElementById('address')
 const adressWarn = document.getElementById('address-warn')
+const dateSpan = document.getElementById('date-span')
 
 const cart = [];
 
@@ -28,7 +29,6 @@ closeModalBtn.addEventListener("click", () => {
 
 menu.addEventListener('click', (event) => {
     let passButton = event.target.closest('.add-to-cart-btn')
-    console.log(passButton)
 
     if (passButton) {
         const name = passButton.getAttribute("data-name")
@@ -52,6 +52,18 @@ function addToCart(name, price) {
             quantity: 1
         })
     }
+
+    Toastify({
+        text: "Item adicionado com sucesso",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+            background: "#16a34a",
+        },
+    }).showToast()
 
     updateCartModal()
 
@@ -81,7 +93,7 @@ function updateCartModal() { // Atualiza visualmente os itens adicionados na mod
 
         total += item.price * item.quantity
 
-        cartItems.appendChild(cartItem)
+        cartItems.append(cartItem)
     })
 
     cartTotal.textContent = total.toLocaleString("pt-BR", { // Converte a moeda em real
@@ -135,14 +147,15 @@ checkoutBtn.addEventListener('click', () => {
     // Quando passar por todos esses ifs ele vai enviar para a API do whatsapp
 
     const isOpen = checkRestaurantOpen()
+
     if (!isOpen) {
         Toastify({
             text: "Ops restaurante fechado",
             duration: 3000,
             close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
             style: {
                 background: "#E84855",
             },
@@ -174,7 +187,7 @@ checkoutBtn.addEventListener('click', () => {
     // Enviar para api do whatsapp
 
     const cartItems = cart.map((item) => {
-        return(
+        return (
             ` ${item.name} Quantidade: ${item.quantity} Preço: R$${item.price} |`
         )
     }).join("") // transforma em string em vez de objeto
@@ -187,9 +200,6 @@ checkoutBtn.addEventListener('click', () => {
     cart.length = 0
     updateCartModal()
 })
-
-
-const dateSpan = document.getElementById('date-span')
 
 function checkRestaurantOpen() {
     const data = new Date
